@@ -111,6 +111,31 @@ content {
 .black_img {
   width: 35%;
   min-width: 300px;
+  position: relative;
+}
+
+.black_img > span {
+  color: #fff;
+  position: absolute;
+  top: 45%;
+  right: 45%;
+  cursor: pointer;
+}
+
+.black_right > span {
+  color: #fff;
+  position: absolute;
+  top: 45%;
+  right: 45%;
+  cursor: pointer;
+}
+
+.left_span {
+  color: #fff;
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  cursor: pointer;
 }
 
 .black_img > img {
@@ -119,8 +144,20 @@ content {
   box-sizing: border-box;
 }
 
+.image_center_black {
+  position: relative;
+}
+
+.center_02_span {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  right: 40%;
+  cursor: pointer;
+}
+
 .image02 {
-  width: 35%;
+  /* width: 35%; */
   min-width: 300px;
   overflow: hidden;
   position: relative;
@@ -143,6 +180,16 @@ content {
   color: #fff;
   opacity: 0;
   transition: 1.2s;
+}
+
+.title span:first-child {
+  border-right: 1px solid #fff;
+  padding-right: 2px;
+  font-weight: 800;
+}
+
+.title span:last-child {
+  padding-left: 5px;
 }
 
 .image:hover .title {
@@ -186,14 +233,44 @@ content {
 
 .right_left .image {
   position: relative;
-  width: 65%;
+  width: 35%;
   height: 100%;
   vertical-align: top;
   box-sizing: border-box;
   margin-right: 4px;
 }
+.right_left .image img {
+  width: 100%;
+  height: 252px;
+  max-width: 100%;
+}
+
+.right_left_02 {
+  display: flex;
+  width: 100%;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.right_left_02 .image02 {
+  position: relative;
+  /* width: 35%; */
+  height: 100%;
+  vertical-align: top;
+  box-sizing: border-box;
+  margin-left: 4px;
+}
+
+.right_left_02_span {
+  position: absolute;
+  top: 45%;
+  right: 65%;
+  color: #fff;
+}
 
 .black_right {
+  position: relative;
   width: 650px;
   height: 100%;
   max-width: 100%;
@@ -214,6 +291,27 @@ content {
 }
 
 .image_center img {
+  height: 250px;
+  object-fit: cover;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.center_02 {
+  display: flex;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.center_02.image_center {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.center_02.image_center img {
   width: 475px;
   height: 250px;
   object-fit: cover;
@@ -231,28 +329,6 @@ content {
   height: 250px;
   object-position: left;
   object-fit: cover;
-}
-
-.black_img .icon01 {
-  position: absolute;
-  top: 37%;
-  right: 15%;
-  width: 30px;
-  height: 50px;
-  display: block;
-}
-
-.icon {
-}
-
-.black_img .icon02 {
-  position: absolute;
-  top: 37%;
-  right: 14%;
-  width: 50px;
-  height: 50px;
-  z-index: 9999;
-  display: none;
 }
 
 .black_img:hover .icon2 {
@@ -351,14 +427,11 @@ content {
     margin-right: 4px;
     width: 65%;
     height: 100%;
-    vertical-align: top;
-    box-sizing: border-box;
   }
 
   .right .image img {
     width: 100%;
     height: 100%;
-    max-width: 100%;
   }
 
   .black_img {
@@ -374,7 +447,6 @@ content {
   .left {
     display: flex;
     width: 100%;
-    min-width: 650px;
     height: 250px;
     position: relative;
     overflow: hidden;
@@ -394,26 +466,51 @@ content {
   }
 
   .right_left {
-    display: flex;
+    display: blcok;
     width: 100%;
     height: 250px;
     position: relative;
     overflow: hidden;
-    justify-content: space-between;
   }
 
   .right_left .image {
     position: relative;
     width: 100%;
-    height: 100%;
     vertical-align: top;
     box-sizing: border-box;
   }
 
   .right_left .image img {
     width: 100%;
+    height: 252px;
+    max-width: 100%;
+  }
+
+  .right_left_02 {
+    width: 100%;
+  }
+
+  .black_right {
+    position: relative;
     height: 100%;
     max-width: 100%;
+  }
+
+  .image02 {
+    /* width: 100%; */
+    min-width: 300px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .image02 img {
+    width: 100%;
+    height: 250px;
+    box-sizing: border-box;
+    object-fit: cover;
+    object-position: right;
+    transition: 1.2s;
+    overflow: hidden;
   }
 
   .center {
@@ -520,29 +617,28 @@ content {
     box-sizing: border-box;
     overflow: hidden;
     padding: 120px 20px;
-    border: 2px solid blue;
   }
+
   #toggle {
     display: block;
   }
 
   .right {
     width: 100%;
-    height: 250px;
+    height: 280px;
     position: relative;
   }
 
   .right .image {
-    position: relative;
     width: 100%;
+    height: 250px;
+    margin-right: 0;
+    overflow: hidden;
   }
 
   .right .image img {
     width: 100%;
     height: 100%;
-    max-width: 100%;
-    object-fit: cover;
-    object-position: left;
   }
 
   .black_img {
@@ -551,57 +647,86 @@ content {
 
   .left {
     width: 100%;
-    min-width: 650px;
     height: 250px;
     position: relative;
     overflow: hidden;
-    margin-top: 4px;
   }
 
   .left .image {
     position: relative;
     width: 100%;
     margin-left: 0;
-    margin-right: 4px;
   }
 
   .left .image img {
     width: 100%;
     height: 100%;
-    max-width: 100%;
   }
 
   .right_left {
+    display: block;
     width: 100%;
-    border: 1px solid red;
+    height: 504px;
+    position: relative;
+    overflow: hidden;
+    justify-content: space-between;
   }
 
-  /* .right_left .image {
+  .right_left .image {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 250px;
     vertical-align: top;
     box-sizing: border-box;
+    margin-bottom: 4px;
   }
 
   .right_left .image img {
     width: 100%;
     height: 100%;
+    max-width: 100%;
   }
 
   .image02 {
+    width: 100%;
+    height: 250px;
     overflow: hidden;
     position: relative;
   }
 
   .image02 img {
+    width: 100%;
     height: 250px;
     box-sizing: border-box;
     object-fit: cover;
     object-position: right;
     transition: 1.2s;
     overflow: hidden;
-  } */
+  }
+
+  .center {
+    display: block;
+    width: 100%;
+    height: 504px;
+    overflow: hidden;
+  }
+
+  .image_center {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin-bottom: 4px;
+  }
+
+  .image_center img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
 
   .image_center_black {
     display: none;
@@ -609,5 +734,24 @@ content {
 
   .black_right {
     display: none;
+  }
+
+  .title {
+    position: absolute;
+    top: 98%;
+    left: 0;
+    opacity: 1;
+    color: #000;
+    z-index: 999;
+  }
+
+  .title span:first-child {
+    border-right: 1px solid #000;
+    padding-right: 2px;
+    font-weight: 800;
+  }
+
+  .title span:last-child {
+    padding-left: 5px;
   }
 }
